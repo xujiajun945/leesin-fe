@@ -1,0 +1,43 @@
+.DS_Store
+node_modules/
+/dist/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+/test/unit/coverage/
+/test/e2e/reports/
+selenium-debug.log
+
+# Editor directories and files
+.idea
+.vscode
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+
+# Compiled class file
+*.class
+*.classpath
+
+# Log file
+logs
+*.log
+
+# Package Files #
+*.jar
+*.war
+*.ear
+*.zip
+*.tar.gz
+*.rar
+
+# IDE Files #
+*.iml
+.project
+.settings
+target
+rebel.xml
+.factorypath
+package-lock.json
+dist/
