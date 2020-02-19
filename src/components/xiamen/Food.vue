@@ -9,9 +9,7 @@
           <div style="padding: 10px;">
             <span>{{ imageData.foodName }}</span>
             <div class="bottom clearfix">
-              <time class="time">{{ currentDate }}</time>
-              <p></p>
-              <el-button type="text" class="button">操作按钮</el-button>
+              <el-button @click="introduce(imageData)" type="info" class="button" plain size="mini"><i class="el-icon-info"></i>&nbsp;&nbsp;简介</el-button>
             </div>
           </div>
         </el-card>
@@ -23,6 +21,9 @@
 <script>
 import kezaijian from '../../assets/food-kezaijian.jpg'
 import tudundong from '../../assets/food-tusundong.jpg'
+import shachamian from '../../assets/food-shachamian.png'
+
+import { MessageBox } from 'element-ui'
 
 export default {
   name: 'Food',
@@ -32,29 +33,77 @@ export default {
       imageDataList: [
         {
           imageSrc: kezaijian,
-          foodName: '蚵仔煎'
+          foodName: '蚵仔煎',
+          title: '标题',
+          introduce: '简介简介简介简介简介简介简介简介简介简介简介简介'
         },
         {
           imageSrc: tudundong,
-          foodName: '土笋冻'
+          foodName: '土笋冻',
+          title: '标题',
+          introduce: '简介简介简介简介简介简介简介简介简介简介简介简介'
+        },
+        {
+          imageSrc: shachamian,
+          foodName: '沙茶面',
+          title: '标题',
+          introduce: '简介简介简介简介简介简介简介简介简介简介简介简介'
         },
         {
           imageSrc: 'https://shadow.elemecdn.com/app/element/hamburger.9cf7b091-55e9-11e9-a976-7f4d0b07eef6.png',
-          foodName: '汉堡3'
+          foodName: '汉堡4',
+          title: '标题',
+          introduce: '简介简介简介简介简介简介简介简介简介简介简介简介'
         },
         {
           imageSrc: 'https://shadow.elemecdn.com/app/element/hamburger.9cf7b091-55e9-11e9-a976-7f4d0b07eef6.png',
-          foodName: '汉堡4'
+          foodName: '汉堡5',
+          title: '标题',
+          introduce: '简介简介简介简介简介简介简介简介简介简介简介简介'
         },
         {
           imageSrc: 'https://shadow.elemecdn.com/app/element/hamburger.9cf7b091-55e9-11e9-a976-7f4d0b07eef6.png',
-          foodName: '汉堡5'
-        },
-        {
-          imageSrc: 'https://shadow.elemecdn.com/app/element/hamburger.9cf7b091-55e9-11e9-a976-7f4d0b07eef6.png',
-          foodName: '汉堡6'
+          foodName: '汉堡6',
+          title: '标题',
+          introduce: '简介简介简介简介简介简介简介简介简介简介简介简介'
         }
       ]
+    }
+  },
+  methods: {
+    introduce (data) {
+      let imgSrc = data.imageSrc
+      MessageBox({
+        title: data.foodName,
+        dangerouslyUseHTMLString: true,
+        message: `
+          <style>
+            .box:hover {
+              background-color: aqua;
+            }
+            .box-img {
+              width: 20%;
+              height: 100%;
+              margin-left: 20px;
+              margin-top: 10px;
+              margin-bottom: 10px;
+            }
+            .img {
+              width: 100%;
+              height: 100%;
+              display: block;
+            }
+          </style>
+          <div style="width: 100%" class="box">
+            <div class="box-img">
+              <img class="img" src="` + imgSrc + `">
+            </div>
+            <div class="box-info">
+
+            </div>
+          </div>
+        `
+      }).then(action => {})
     }
   }
 }
@@ -72,7 +121,6 @@ export default {
 }
 
 .button {
-  padding: 0;
   float: right;
 }
 
