@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import XiaMen from '@/components/XiaMen'
+import XiaMen from '@/module/XiaMen'
 
 Vue.use(Router)
 
@@ -15,7 +15,7 @@ export default new Router({
       path: '/chongqing',
       name: 'ChongQing',
       /* 路由的第二种方式 */
-      component: () => import('../components/ChongQing')
+      component: () => import('../module/ChongQing')
     }
   ]
 })
